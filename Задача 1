@@ -1,0 +1,20 @@
+#include <iostream> 
+using namespace std;
+int main() {
+	setlocale(LC_ALL, "Russian");
+	int a;
+	cout << "Введите число ";
+	cin >> a;
+	if (a / 100 > 1 && a / 100 < 10) {
+		cout << a << " - трехзначное число";
+	}
+	else {
+		if (a / 100 > -10 && a / 100 < -1) {
+			cout << a << " - трехначное число";
+		}
+		else {
+			cout << a << " - не трехзначное число";
+		}
+	}
+	return 0;
+}
