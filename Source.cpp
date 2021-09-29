@@ -2,318 +2,79 @@
 using namespace std;
 int main() {
 	setlocale(LC_ALL, "Russian");
-	int a;
-	cout << "Введите число ";
+	int a, b, c;
+	cout << "Введите номер месяца ";
 	cin >> a;
-	if (a >= 1 && a <= 10000000) {
-		switch (a / 1000000) {
-		case 0:
-			cout << "";
-			break;
-		case 1:
-			cout << "Один миллион ";
-			break;
-		case 2:
-			cout << "Два миллиона ";
-			break;
-		case 3:
-			cout << "Три миллиона ";
-			break;
-		case 4:
-			cout << "Четыре миллиона ";
-			break;
-		case 5:
-			cout << "Пять миллионов ";
-			break;
-		case 6:
-			cout << "Шесть миллионов ";
-			break;
-		case 7:
-			cout << "Семь миллионов ";
-			break;
-		case 8:
-			cout << "Восемь миллинов ";
-			break;
-		case 9:
-			cout << "Девять миллионов ";
-			break;
-		case 10:
-			cout << "Десять миллионов ";
-			break;
-		}
-			switch (a / 100000 - a / 1000000 * 10) {
-			case 0:
-				cout << "";
-				break;
-			case 1:
-				cout << "сто ";
-				break;
-			case 2:
-				cout << "двести ";
-				break;
-			case 3:
-				cout << "триста ";
-				break;
-			case 4:
-				cout << "четыреста ";
-				break;
-			case 5:
-				cout << "пятьсот ";
-				break;
-			case 6:
-				cout << "шестьсот ";
-				break;
-			case 7:
-				cout << "семьсот ";
-				break;
-			case 8:
-				cout << "восемьсот ";
-				break;
-			case 9:
-				cout << "девятьсот ";
-				break;
-			}
-			switch (a / 10000 - a / 100000 * 10) {
-			case 0:
-				cout << "";
-				break;
-			case 1:
-				cout << "";
-				break;
-			case 2:
-				cout << "двадцать ";
-				break;
-			case 3:
-				cout << "тридцать ";
-				break;
-			case 4:
-				cout << "сорок ";
-				break;
-			case 5:
-				cout << "пятьдесят ";
-				break;
-			case 6:
-				cout << "шестьдесят ";
-				break;
-			case 7:
-				cout << "семьдесят ";
-				break;
-			case 8:
-				cout << "восемьдесят ";
-				break;
-			case 9:
-				cout << "девяносто ";
-				break;
-			}
-			if (a / 1000 - a / 100000 * 100 >= 10 && a / 1000 - a / 100000 * 100 <= 19) {
-				switch (a / 1000 - a / 100000 * 100) {
-				case 10:
-					cout << "десять тысяч ";
-					break;
-				case 11:
-					cout << "одиннадцать тысяч ";
-					break;
-				case 12:
-					cout << "двенадцать тысяч ";
-					break;
-				case 13:
-					cout << "тринадцать тысяч ";
-					break;
-				case 14:
-					cout << "четырнадцать тысяч ";
-					break;
-				case 15:
-					cout << "пятнадцать тысяч ";
-					break;
-				case 16:
-					cout << "шестнадцать тысяч ";
-					break;
-				case 17:
-					cout << "семнадцать тысяч ";
-					break;
-				case 18:
-					cout << "восемнадцать тысяч ";
-					break;
-				case 19:
-					cout << "девятнадцать тысяч ";
-					break;
-				}
-			}
-			else {
-				switch (a / 1000 - a / 10000 * 10) {
-				case 0:
-					cout << "";
-					break;
-				case 1:
-					cout << "одна тысяча ";
-					break;
-				case 2:
-					cout << "две тысячи ";
-					break;
-				case 3:
-					cout << "три тысячи ";
-					break;
-				case 4:
-					cout << "четыре тысячи ";
-					break;
-				case 5:
-					cout << "пять тысяч ";
-					break;
-				case 6:
-					cout << "шесть тысяч ";
-					break;
-				case 7:
-					cout << "семь тысяч ";
-					break;
-				case 8:
-					cout << "восемь тысяч ";
-					break;
-				case 9:
-					cout << "девять тысяч ";
-					break;
-				}
-			}
-			if (a / 1000 % 100 == 0 && a / 1000 - a / 1000000 * 1000 >= 100) {
-				cout << "тысяч ";
-			}
-			if (a / 1000 % 1000 == 0) {
-				cout << "";
-			}
-			switch (a / 100 - a / 1000 * 10) {
-			case 0:
-				cout << "";
-				break;
-			case 1:
-				cout << "сто ";
-				break;
-			case 2:
-				cout << "двести ";
-				break;
-			case 3:
-				cout << "триста ";
-				break;
-			case 4:
-				cout << "четыреста ";
-				break;
-			case 5:
-				cout << "пятьсот ";
-				break;
-			case 6:
-				cout << "шестьсот ";
-				break;
-			case 7:
-				cout << "семьсот ";
-				break;
-			case 8:
-				cout << "восемьсот ";
-				break;
-			case 9:
-				cout << "девятьсот ";
-				break;
-			}
-			switch (a / 10 - a / 100 * 10) {
-			case 0:
-				cout << "";
-				break;
-			case 1:
-				cout << "";
-				break;
-			case 2:
-				cout << "двадцать ";
-				break;
-			case 3:
-				cout << "тридцать ";
-				break;
-			case 4:
-				cout << "сорок ";
-				break;
-			case 5:
-				cout << "пятьдесят ";
-				break;
-			case 6:
-				cout << "шестьдесят ";
-				break;
-			case 7:
-				cout << "семьдесят ";
-				break;
-			case 8:
-				cout << "восемьдесят ";
-				break;
-			case 9:
-				cout << "девяносто ";
-				break;
-			}
-			if (a - a / 100 * 100 >= 10 && a - a / 100 * 100 <= 19) {
-				switch (a - a / 100 * 100) {
-				case 10:
-					cout << "десять ";
-					break;
-				case 11:
-					cout << "одиннадцать ";
-					break;
-				case 12:
-					cout << "двенадцать ";
-					break;
-				case 13:
-					cout << "тринадцать ";
-					break;
-				case 14:
-					cout << "четырнадцать ";
-					break;
-				case 15:
-					cout << "пятнадцать ";
-					break;
-				case 16:
-					cout << "шестнадцать ";
-					break;
-				case 17:
-					cout << "семнадцать ";
-					break;
-				case 18:
-					cout << "восемнадцать ";
-					break;
-				case 19:
-					cout << "девятнадцать ";
-					break;
-				}
-			}
-			else {
-				switch (a - a / 10 * 10) {
-				case 0:
-					cout << "";
-					break;
-				case 1:
-					cout << "один ";
-					break;
-				case 2:
-					cout << "два ";
-					break;
-				case 3:
-					cout << "три ";
-					break;
-				case 4:
-					cout << "четыре ";
-					break;
-				case 5:
-					cout << "пять ";
-					break;
-				case 6:
-					cout << "шесть ";
-					break;
-				case 7:
-					cout << "семь ";
-					break;
-				case 8:
-					cout << "восемь";
-					break;
-				case 9:
-					cout << "девять ";
-					break;
-				}
-			}
+	cout << "Введите число месяца ";
+	cin >> b;
+	if (a == 2 && b >= 1 && b <= 28) {
+		c = 365 - 31 - b;
+		cout << "До Нового года осталось " << c;
 	}
-	else     {
-	cout << "Ошибка";
-    }
+	else {
+		if (b >= 1 && b <= 31) {
+			switch (a) {
+			case 1:
+				c = 365 - b;
+				cout << "До Нового года осталось " << c;
+				break;
+			case 3:
+				c = 365 - 59 - b;
+				cout << "До Нового года осталось " << c;
+				break;
+			case 5:
+				c = 365 - 120 - b;
+				cout << "До Нового года осталось " << c;
+				break;
+			case 7:
+				c = 365 - 181 - b;
+				cout << "До Нового года осталось " << c;
+				break;
+			case 8:
+				c = 365 - 212 - b;
+				cout << "До Нового года осталось " << c;
+				break;
+			case 10:
+				c = 365 - 273 - b;
+				cout << "До Нового года осталось " << c;
+				break;
+			case 12:
+				c = 365 - 334 - b;
+				cout << "До Нового года осталось " << c;
+				break;
+			default:
+				if (b >= 1 && b <= 30) {
+					switch (a) {
+					case 4:
+						c = 365 - 90 - b;
+						cout << "До Нового года осталось " << c;
+						break;
+					case 6:
+						c = 365 - 151 - b;
+						cout << "До Нового года осталось " << c;
+						break;
+					case 9:
+						c = 365 - 243 - b;
+						cout << "До Нового года осталось " << c;
+						break;
+					case 11:
+						c = 365 - 304 - b;
+						cout << "До Нового года осталось " << c;
+						break;
+					default:
+						cout << "Введены неверные данные";
+					}
+				}
+			}
+
+		}
+		else {
+			cout << "Введены неверные данные";
+		}
+	}
 	return 0;
 }
+
+
+
+	
