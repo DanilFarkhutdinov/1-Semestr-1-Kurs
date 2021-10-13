@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+void FibonacciNumber(int n) {
+	int a = 1;
+	int b = 1;
+	if (n > 2) {
+		for (int i = 1; i < n - 1; i++) {
+			int c = a;
+			a = a + b;
+			b = c;
+		}
+		cout << a;
+	}
+	else {
+		cout << a;
+	}
+}
+int main() {
+	int n;
+	setlocale(LC_ALL, "Russian");
+	cout << "Введите № числа Фибоначчи ";
+	cin >> n;
+    FibonacciNumber(n);
+	return 0;
+}
