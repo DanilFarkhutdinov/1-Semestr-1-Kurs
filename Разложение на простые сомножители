@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+void SimpleMultipliers(int n) {
+	if (n == 1) return;
+	int static s = 2;
+	if (n == s) {
+		cout << s;
+	}
+	else{
+		if (n % s == 0) {
+			cout << s << "*";
+			SimpleMultipliers(n / s);
+		}
+		else {
+			s++;
+			SimpleMultipliers(n);
+		}
+	}
+	
+}
+int main() {
+	setlocale(LC_ALL, "Russian");
+	int n;
+	cout << "Введите число ";
+	cin >> n;
+	SimpleMultipliers(n);
+	return 0;
+}
