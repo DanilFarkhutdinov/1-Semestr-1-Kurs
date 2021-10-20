@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+void Number(int n) {
+	if (n == 0) return;
+	Number(n / 10);
+	cout << n % 10 << endl;
+}
+int main() {
+	setlocale(LC_ALL, "Russian");
+	cout << "Введите число ";
+	int n;
+	cin >> n;
+	Number(n);
+	return 0;
+}
