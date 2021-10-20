@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int Decimal(int n) {
+	if (n == 0 || (n % 10 != 1 && n % 10 != 0)) return 0;
+	int static s = 0;
+	int sum = 0;
+	if (n % 10 == 1) {
+		sum += int (pow(2, s));
+		s++;
+	}
+	if (n % 10 == 0) {
+		s++;
+	}
+	sum += Decimal(n / 10);
+	return sum;
+}
+int main() {
+	setlocale(LC_ALL, "Russian");
+	cout << "Введите двоичное число ";
+	int n;
+	cin >> n;
+	cout << Decimal(n);
+	return 0;
+}
