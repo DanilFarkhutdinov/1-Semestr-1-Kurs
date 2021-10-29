@@ -45,34 +45,29 @@ void task_3(int* array, int N) {
 }
 int main() {
 	setlocale(LC_ALL, "Russian");
-	int a;
+	int a, N;
 	cout << "Введите № задачи" << " ";
 	cin >> a;
+	cout << "Введите размер массива ";
+	cin >> N;
+	int* array = new int[N];
 	if (a == 1) {
-		int size, diff;
-		cout << "Введите размер массива ";
-		cin >> size;
+		int diff;
 		cout << "Введите разность ";
 		cin >> diff;
-		int* array = new int[size];
 		cout << "Введите первый элемент массива ";
 		cin >> array[0];
-		task_1(array, size, diff);
+		task_1(array, N, diff);
+		for (int i = 0; i < N; i++) {
+		}
 	}
 	if (a == 2) {
-		int N;
-		cout << "Введите размер массива ";
-		cin >> N;
-		int* array = new int[N];
 		array[0] = 1;
 		task_2(array, N);
 	}
 	if (a == 3) {
-		int N;
-		cout << "Введите размер массива ";
-		cin >> N;
-		int* array = new int[N];
 		task_3(array, N);
 	}
 	return 0;
+	delete[] array;
 }
