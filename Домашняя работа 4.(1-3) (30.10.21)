@@ -1,16 +1,16 @@
 #include <iostream>
 using namespace std;
-void print_array(int* array, int size) {
-	for (int i = 0; i < size; i++) {
+void print_array(int* array, int N) {
+	for (int i = 0; i < N; i++) {
 		cout << array[i] << " ";
 	}
 }
-void task_1(int* array, int size, int diff) {
-	for (int i = 0; i < size; i++) {
+void task_1(int* array, int N, int diff) {
+	for (int i = 0; i < N; i++) {
 		array[i + 1] = array[i] + diff;
 	}
 	cout << "Арифметическая прогрессия: ";
-	print_array(array, size);
+	print_array(array, N);
 }
 void task_2(int* array, int N) {
 	srand(time(0));
@@ -58,8 +58,6 @@ int main() {
 		cout << "Введите первый элемент массива ";
 		cin >> array[0];
 		task_1(array, N, diff);
-		for (int i = 0; i < N; i++) {
-		}
 	}
 	if (a == 2) {
 		array[0] = 1;
