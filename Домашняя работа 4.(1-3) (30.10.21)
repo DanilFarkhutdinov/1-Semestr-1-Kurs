@@ -60,7 +60,6 @@ int main() {
 		task_1(array, N, diff);
 	}
 	if (a == 2) {
-		array[0] = 1;
 		task_2(array, N);
 	}
 	if (a == 3) {
