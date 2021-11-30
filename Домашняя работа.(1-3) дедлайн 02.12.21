@@ -1,0 +1,85 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+void print_matrix(int **array, int n, int m) {
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			cout << array[i][j] << " ";
+		}
+		cout << endl;
+	}
+	cout << endl;
+}
+void random_matrix(int** array, int n, int m) {
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			array[i][j] = rand() % 10;
+		}
+	}
+}
+void change_lines(int** array, int n, int m) {
+	int a = 0, b = 0;
+	while (a == b) {
+		 a = rand() % n;
+		 b = rand() % n;
+	}
+		for (int j = 0; j < m; j++) {
+			int c = array[a][j];
+			array[a][j] = array[b][j];
+			array[b][j] = c;
+		}
+	cout << "Изменённая матрица: переставлены " << a + 1 << " и " << b + 1 << " строки" << endl << endl;
+	print_matrix(array, n, m);
+}
+void number_matrix(int** array, int n, int m) {
+	int d;
+	cout << "Введите число от 0 до 9 ";
+	cin >> d;
+	int s = 0;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			if (array[i][j] == d) {
+				s++;
+			}
+		}
+	}
+	cout << "Число " << d << " встречается " << s << " раз" ;
+}
+void sum_elements(int** array, int n, int m) {
+	int sum = 0;
+	for (int j = 0; j < m; j++) {
+		for (int i = 0; i < n; i++) {
+			sum += array[i][j];
+		}
+		cout <<"Сумма элементов " << j + 1 << " столбца = " << sum << endl;
+		sum = 0;
+	}
+}
+int main() {
+	setlocale(LC_ALL, "Russian");
+	srand(time(0));
+	int n, m, a;
+	cout << "Введите номер задачи ";
+	cin >> a;
+	cout << "Введите количество строк ";
+	cin >> n;
+	cout << "Введите количество cтолбцов ";
+	cin >> m;
+	cout << endl;
+	int** array = new int* [n];
+	for (int i = 0; i < n; i++) {
+		array[i] = new int[m];
+	}
+	random_matrix(array, n, m);
+	print_matrix(array, n, m);
+	if (a == 1) {
+		change_lines(array, n, m);
+	}
+	if (a == 2) {
+		number_matrix(array, n, m);
+	}
+	if (a == 3) {
+		sum_elements(array, n, m);
+	}
+	return 0;
+}
