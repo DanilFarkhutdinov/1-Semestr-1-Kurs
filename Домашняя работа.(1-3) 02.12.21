@@ -81,5 +81,9 @@ int main() {
 	if (a == 3) {
 		sum_elements(array, n, m);
 	}
+	for (int i = 0; i < n; i++) {
+		delete[] array[i];
+	}
+	delete[] array;
 	return 0;
 }
