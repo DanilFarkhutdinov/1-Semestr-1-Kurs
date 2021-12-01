@@ -5,9 +5,14 @@ void print_array(int* array, int N) {
 		cout << array[i] << " ";
 	}
 }
-void task_1(int* array, int N, int diff) {
-	for (int i = 0; i < N; i++) {
-		array[i + 1] = array[i] + diff;
+void task_1(int* array, int N) {
+	int diff;
+	cout << "Введите разность ";
+	cin >> diff;
+	cout << "Введите первый элемент массива ";
+	cin >> array[0];
+	for (int i = 1; i < N; i++) {
+		array[i] = array[0] + diff * i;
 	}
 	cout << "Арифметическая прогрессия: ";
 	print_array(array, N);
@@ -52,12 +57,7 @@ int main() {
 	cin >> N;
 	int* array = new int[N];
 	if (a == 1) {
-		int diff;
-		cout << "Введите разность ";
-		cin >> diff;
-		cout << "Введите первый элемент массива ";
-		cin >> array[0];
-		task_1(array, N, diff);
+		task_1(array, N);
 	}
 	if (a == 2) {
 		task_2(array, N);
@@ -65,6 +65,6 @@ int main() {
 	if (a == 3) {
 		task_3(array, N);
 	}
-	return 0;
 	delete[] array;
+	return 0;
 }
