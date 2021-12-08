@@ -1,0 +1,83 @@
+#include <iostream>
+#include <windows.h>
+#include <string.h>
+using namespace std;
+void palindrome(char* str) {
+	int n;
+	n = strlen(str);
+	int s = 0;
+	for (int i = 0; i < n / 2; i++) {
+		if (str[i] == str[n - 1 - i]) {
+			s++;
+		}
+	}
+	if (s == n / 2) {
+		cout << "Слово " << str << " палиндром" << endl;
+	}
+	else {
+		cout << "Слово " << str << " не палиндром" << endl;
+	}
+}
+void Sum(char *str) {
+	int n;
+	n = strlen(str);
+	int sum = 0;
+	int sum_1 = 0;
+	for (int i = 0; i < n; i++) {
+		char numbers[12] = {'0','1','2','3','4','5','6','7','8','9','a'};
+		for (int j = 0; j < 10; j++) {
+			for (int k = 0; k < 10; k++) {
+				if (str[i] == numbers[j] && str[i + 1] == numbers[k]) {
+					sum *= 10;
+					j *= 10;
+					sum += j;
+					if (j == 0) {
+						j = 11;
+					}
+				}	
+			}
+			if (str[i] == numbers[j]) {
+				sum += j;
+				sum_1 += sum;
+				sum = 0;
+			}
+		}
+	}
+	cout << sum_1 << endl;
+}
+void name(char* str) {
+	int n;
+	n = strlen(str);
+	for (int i = 0; i < n; i++) {
+		if (str[i] == ' ') {
+			cout << str[i + 1] << ".";
+		}
+	}
+	for (int i = 0; i < n; i++) {
+		cout << str[i];
+		if (str[i] == ' ') {
+			break;
+		}
+	}
+	cout << endl;
+}
+int main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	int a;
+	char* str = new char[50];
+	cout << "Задача 3" << endl;
+	cout << "Введите фамилию, имя и отчество: ";
+	cin.get(str, 50);
+	name(str);
+	cout << "Задача 2" << endl;
+	cout << "Введите выражение: ";
+	cin >> str;
+	Sum(str);
+	cout << "Задача 1" << endl;
+	cout << "Введите слово: ";
+	cin >> str;
+	palindrome(str);
+	delete[] str;
+	return 0;
+}
