@@ -5,7 +5,13 @@ using namespace std;
 void fill_stack(elem*& stack, string str, int a);
 void show_stack(elem* stack);
 void mistakes(elem*&stack, string str) {
+	int size = 0;
 	int a = 0;
+	for (int j = 0; j < str.length(); j++) {
+		if (str[j] == '(' || str[j] == '[' || str[j] == '{' || str[j] == '<' || str[j] == ')' || str[j] == ']' || str[j] == '}' || str[j] == '>') {
+			size++;
+		}
+	}
 	for (int i = 0; i < str.length(); i++) {
 		if (str[i] == '(' || str[i] == '[' || str[i] == '{' || str[i] == '<') {
 			a = i;
@@ -17,7 +23,7 @@ void mistakes(elem*&stack, string str) {
 					pop(stack, str[i]);
 				}
 				else {
-					cout << "Ñêîáêà ïîä íîìåðîì " << i + 1 << " ÿâëÿåòñÿ îøèáî÷íîé" << endl;
+					cout << "Скобка под номером " << i + 1 << " является ошибочной" << endl;
 					break;
 				}
 			}
@@ -27,7 +33,7 @@ void mistakes(elem*&stack, string str) {
 						pop(stack, str[i]);
 					}
 					else {
-						cout << "Ñêîáêà ïîä íîìåðîì " << i + 1 << " ÿâëÿåòñÿ îøèáî÷íîé" << endl;
+						cout << "Скобка под номером " << i + 1 << " является ошибочной" << endl;
 						break;
 					}
 				}
@@ -37,7 +43,7 @@ void mistakes(elem*&stack, string str) {
 							pop(stack, str[i]);
 						}
 						else {
-							cout << "Ñêîáêà ïîä íîìåðîì " << i + 1 << " ÿâëÿåòñÿ îøèáî÷íîé" << endl;
+							cout << "Скобка под номером " << i + 1 << " является ошибочной" << endl;
 							break;
 						}
 					}
@@ -47,7 +53,7 @@ void mistakes(elem*&stack, string str) {
 								pop(stack, str[i]);
 							}
 							else {
-								cout << "Ñêîáêà ïîä íîìåðîì " << i + 1 << " ÿâëÿåòñÿ îøèáî÷íîé" << endl;
+								cout << "Скобка под номером " << i + 1 << " является ошибочной" << endl;
 								break;
 							}
 						}
@@ -56,18 +62,21 @@ void mistakes(elem*&stack, string str) {
 			}
 		}
 	}
+	if (size % 2 != 0) {
+		cout << "Не хватает скобок" << endl;
+	}
 	if (!stack) {
-		cout << "Ñêîáêè ðàññòàâëåíû ïðàâèëüíî" << endl;
+		cout << "Скобки расставлены правильно" << endl;
 	}
 	else {
-		cout << "Ñêîáêè ðàññòàâëåíû íåïðàâèëüíî" << endl;
+		cout << "Скобки расставлены неправильно" << endl;
 	}
 }
 int main() {
 	setlocale(LC_ALL, "Russian");
 	elem* stack = nullptr;
 	string str;
-	cout << "Ââåäèòå âûðàæåíèå: ";
+	cout << "Введите выражение: ";
 	cin >> str;
 	int length = str.length();
 	mistakes(stack, str);
