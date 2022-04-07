@@ -17,7 +17,7 @@ void mistakes(elem*&stack, string str) {
 					pop(stack, str[i]);
 				}
 				else {
-					cout << "Ñêîáêà ïîä íîìåğîì " << i + 1 << " ÿâëÿåòñÿ îøèáî÷íîé" << endl;
+					cout << "Ã‘ÃªÃ®Ã¡ÃªÃ  Ã¯Ã®Ã¤ Ã­Ã®Ã¬Ã¥Ã°Ã®Ã¬ " << i + 1 << " Ã¿Ã¢Ã«Ã¿Ã¥Ã²Ã±Ã¿ Ã®Ã¸Ã¨Ã¡Ã®Ã·Ã­Ã®Ã©" << endl;
 					break;
 				}
 			}
@@ -27,7 +27,7 @@ void mistakes(elem*&stack, string str) {
 						pop(stack, str[i]);
 					}
 					else {
-						cout << "Ñêîáêà ïîä íîìåğîì " << i + 1 << " ÿâëÿåòñÿ îøèáî÷íîé" << endl;
+						cout << "Ã‘ÃªÃ®Ã¡ÃªÃ  Ã¯Ã®Ã¤ Ã­Ã®Ã¬Ã¥Ã°Ã®Ã¬ " << i + 1 << " Ã¿Ã¢Ã«Ã¿Ã¥Ã²Ã±Ã¿ Ã®Ã¸Ã¨Ã¡Ã®Ã·Ã­Ã®Ã©" << endl;
 						break;
 					}
 				}
@@ -37,7 +37,7 @@ void mistakes(elem*&stack, string str) {
 							pop(stack, str[i]);
 						}
 						else {
-							cout << "Ñêîáêà ïîä íîìåğîì " << i + 1 << " ÿâëÿåòñÿ îøèáî÷íîé" << endl;
+							cout << "Ã‘ÃªÃ®Ã¡ÃªÃ  Ã¯Ã®Ã¤ Ã­Ã®Ã¬Ã¥Ã°Ã®Ã¬ " << i + 1 << " Ã¿Ã¢Ã«Ã¿Ã¥Ã²Ã±Ã¿ Ã®Ã¸Ã¨Ã¡Ã®Ã·Ã­Ã®Ã©" << endl;
 							break;
 						}
 					}
@@ -47,7 +47,7 @@ void mistakes(elem*&stack, string str) {
 								pop(stack, str[i]);
 							}
 							else {
-								cout << "Ñêîáêà ïîä íîìåğîì " << i + 1 << " ÿâëÿåòñÿ îøèáî÷íîé" << endl;
+								cout << "Ã‘ÃªÃ®Ã¡ÃªÃ  Ã¯Ã®Ã¤ Ã­Ã®Ã¬Ã¥Ã°Ã®Ã¬ " << i + 1 << " Ã¿Ã¢Ã«Ã¿Ã¥Ã²Ã±Ã¿ Ã®Ã¸Ã¨Ã¡Ã®Ã·Ã­Ã®Ã©" << endl;
 								break;
 							}
 						}
@@ -57,19 +57,20 @@ void mistakes(elem*&stack, string str) {
 		}
 	}
 	if (!stack) {
-		cout << "Ñêîáêè ğàññòàâëåíû ïğàâèëüíî" << endl;
+		cout << "Ã‘ÃªÃ®Ã¡ÃªÃ¨ Ã°Ã Ã±Ã±Ã²Ã Ã¢Ã«Ã¥Ã­Ã» Ã¯Ã°Ã Ã¢Ã¨Ã«Ã¼Ã­Ã®" << endl;
 	}
 	else {
-		cout << "Ñêîáêè ğàññòàâëåíû íåïğàâèëüíî" << endl;
+		cout << "Ã‘ÃªÃ®Ã¡ÃªÃ¨ Ã°Ã Ã±Ã±Ã²Ã Ã¢Ã«Ã¥Ã­Ã» Ã­Ã¥Ã¯Ã°Ã Ã¢Ã¨Ã«Ã¼Ã­Ã®" << endl;
 	}
 }
 int main() {
 	setlocale(LC_ALL, "Russian");
 	elem* stack = nullptr;
 	string str;
-	cout << "Ââåäèòå âûğàæåíèå: ";
+	cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¢Ã»Ã°Ã Ã¦Ã¥Ã­Ã¨Ã¥: ";
 	cin >> str;
 	int length = str.length();
 	mistakes(stack, str);
+	clear(stack);
 	return 0;
 }
