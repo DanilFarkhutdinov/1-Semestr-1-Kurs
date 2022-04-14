@@ -13,23 +13,20 @@ void mistakes(elem*&stack, string str) {
 		}
 	}
 	for (int i = 0; i < str.length(); i++) {
-		if (str[i] == '(' || str[i] == '[' || str[i] == '{' || str[i] == '<') {
+		if (str[0] == ')' || str[0] == ']' || str[0] == '}' || str[0] == '>') {
+			cout << "Неправильно введена первая скобка" << endl;
 			a = i;
 			fill_stack(stack, str, a);
+			break;
 		}
 		else {
-			if (str[i] == ')') {
-				if (*peek(stack) == '(') {
-					pop(stack, str[i]);
-				}
-				else {
-					cout << "Скобка под номером " << i + 1 << " является ошибочной" << endl;
-					break;
-				}
+			if (str[i] == '(' || str[i] == '[' || str[i] == '{' || str[i] == '<') {
+				a = i;
+				fill_stack(stack, str, a);
 			}
 			else {
-				if (str[i] == ']') {
-					if (*peek(stack) == '[') {
+				if (str[i] == ')') {
+					if (*peek(stack) == '(') {
 						pop(stack, str[i]);
 					}
 					else {
@@ -38,8 +35,8 @@ void mistakes(elem*&stack, string str) {
 					}
 				}
 				else {
-					if (str[i] == '}') {
-						if (*peek(stack) == '{') {
+					if (str[i] == ']') {
+						if (*peek(stack) == '[') {
 							pop(stack, str[i]);
 						}
 						else {
@@ -48,13 +45,24 @@ void mistakes(elem*&stack, string str) {
 						}
 					}
 					else {
-						if (str[i] == '>') {
-							if (*peek(stack) == '<') {
+						if (str[i] == '}') {
+							if (*peek(stack) == '{') {
 								pop(stack, str[i]);
 							}
 							else {
 								cout << "Скобка под номером " << i + 1 << " является ошибочной" << endl;
 								break;
+							}
+						}
+						else {
+							if (str[i] == '>') {
+								if (*peek(stack) == '<') {
+									pop(stack, str[i]);
+								}
+								else {
+									cout << "Скобка под номером " << i + 1 << " является ошибочной" << endl;
+									break;
+								}
 							}
 						}
 					}
