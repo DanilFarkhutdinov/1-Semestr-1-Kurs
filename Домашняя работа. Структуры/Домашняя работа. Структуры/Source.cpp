@@ -4,7 +4,7 @@
 using namespace std;
 void fill_stack(elem*& stack, string str, int a);
 void show_stack(elem* stack);
-void mistakes(elem*&stack, string str) {
+void mistakes(elem*& stack, string str) {
 	int size = 0;
 	int a = 0;
 	for (int j = 0; j < str.length(); j++) {
@@ -25,18 +25,9 @@ void mistakes(elem*&stack, string str) {
 				fill_stack(stack, str, a);
 			}
 			else {
-				if (str[i] == ')') {
-					if (*peek(stack) == '(') {
-						pop(stack, str[i]);
-					}
-					else {
-						cout << "Скобка под номером " << i + 1 << " является ошибочной" << endl;
-						break;
-					}
-				}
-				else {
-					if (str[i] == ']') {
-						if (*peek(stack) == '[') {
+				if (stack) {
+					if (str[i] == ')') {
+						if (*peek(stack) == '(') {
 							pop(stack, str[i]);
 						}
 						else {
@@ -45,8 +36,8 @@ void mistakes(elem*&stack, string str) {
 						}
 					}
 					else {
-						if (str[i] == '}') {
-							if (*peek(stack) == '{') {
+						if (str[i] == ']') {
+							if (*peek(stack) == '[') {
 								pop(stack, str[i]);
 							}
 							else {
@@ -55,8 +46,8 @@ void mistakes(elem*&stack, string str) {
 							}
 						}
 						else {
-							if (str[i] == '>') {
-								if (*peek(stack) == '<') {
+							if (str[i] == '}') {
+								if (*peek(stack) == '{') {
 									pop(stack, str[i]);
 								}
 								else {
@@ -64,8 +55,22 @@ void mistakes(elem*&stack, string str) {
 									break;
 								}
 							}
+							else {
+								if (str[i] == '>') {
+									if (*peek(stack) == '<') {
+										pop(stack, str[i]);
+									}
+									else {
+										cout << "Скобка под номером " << i + 1 << " является ошибочной" << endl;
+										break;
+									}
+								}
+							}
 						}
 					}
+				}
+				else {
+					cout << "Скобка под номером " << i + 1 << " является ошибочной" << endl;
 				}
 			}
 		}
